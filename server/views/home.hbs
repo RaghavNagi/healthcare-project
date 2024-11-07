@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+</head>
+
+<body>
+    {{> header}}
+
+    <h1>{{message}}</h1>
+    <p>User Information:</p>
+    <ul>
+        <li>Name: {{user.name}}</li>
+        <li>Age: {{user.age}}</li>
+    </ul>
+    <div>
+        <form action="/profile" method="post" enctype="multipart/form-data">
+            <input type="file" name="avatar">
+            <input type="submit" value="upload">
+        </form>
+    </div>
+    {{#if imageUrl}}
+        <div>
+            <h2>Your Uploaded Image</h2>
+            <img src="{{imageUrl}}" alt="Uploaded Avatar" style="max-width: 200px;">
+        </div>
+    {{/if}}
+</body>
+
+</html>

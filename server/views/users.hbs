@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Users Page</title>
+</head>
+
+<body>
+    {{> header}}
+
+    <h1>Welcome to the Home Page</h1>
+
+    <h2>Users Information</h2>
+    <ul>
+        {{#each users}}
+        <li>
+            <h3>{{this.name}}</h3>
+            <p>Age: {{this.age}}</p>
+            <p>Email: {{this.email}}</p>
+            <p>Role: {{this.role}}</p>
+        </li>
+        {{/each}}
+    </ul>
+</body>
+
+</html>
