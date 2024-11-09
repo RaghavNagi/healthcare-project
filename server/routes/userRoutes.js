@@ -1,12 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const jwtMiddleware = require("../middlewares/jwtMiddleware");
+const {validateJwtToken,createToken} = require("../middlewares/jwtMiddleware");
 const { registerUser, loginUser } = require("../controllers/userControllers");
 
-const {
-    registerUser,
-    loginUser
-}=require("../controllers/userControllers");
 router.post("/" , registerUser);
-router.post("/login", loginUser,jwtMiddleware);
+router.post("/login", createToken ,loginUser);
 module.exports=router;
