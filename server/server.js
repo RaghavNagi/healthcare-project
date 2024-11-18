@@ -37,11 +37,12 @@ app.set('view engine', 'hbs');
 // Import routes
 const userRoutes = require("./routes/userRoutes");
 const doctorRoutes = require("./routes/doctorRoutes");
-
+const newsLetterRoutes = require("./routes/newsLetterRoutes");
 // Define routes
 app.use('/api/register', userRoutes);
 app.use('/api/doctors', doctorRoutes);
 app.use("/api/users", userRoutes); // Avoid duplicate routes if possible
+app.use("/api/newsLetter",newsLetterRoutes);
 
 // Route definitions
 app.get('/', (req, res) => res.send("working"));
